@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int act_day = scan.nextInt();
+        int act_month = scan.nextInt();
+        int act_year = scan.nextInt();
+        int exp_day = scan.nextInt();
+        int exp_month = scan.nextInt();
+        int exp_year = scan.nextInt();
+
+        int fine;
+
+        if(act_year>exp_year){
+            fine=10000;
+        } else if(act_month>exp_month && act_year>=exp_year){
+            fine = 500*(act_month-exp_month);
+        } else if(act_day>exp_day && act_month>=exp_month && act_year>=exp_year) {
+            fine = 15 * (act_day-exp_day);
+        } else {
+            fine=0;
+        }
+
+        System.out.println(fine);
+        scan.close();
+    }
+}
